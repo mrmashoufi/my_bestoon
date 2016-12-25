@@ -8,9 +8,13 @@ class kharj(models.Model):
     Zaman = models.DateTimeField()
     Meghdar = models.BigIntegerField()
     Karbar = models.ForeignKey(User)
+    def __unicode__(self):
+        return "{} - Mablagh : (- {} ) - Dar Tarikh :{}".format(self.Onvan,self.Meghdar,self.Zaman)
 
 class daramad(models.Model):
     Onvan = models.CharField(max_length = 255)
     Zaman = models.DateTimeField()
     Meghdar = models.BigIntegerField()
     Karbar = models.ForeignKey(User)
+    def __unicode__(self):
+        return "{} - Mablagh :( +{} ) - Dar Tarikh :{}".format(self.Onvan,self.Meghdar,self.Zaman)
